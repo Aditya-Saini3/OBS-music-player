@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700;900&display=swap');
+
 *, 
 *::after,
 *::before {
@@ -7,18 +9,84 @@
 }
 
 body {
-    background-color: rgb(18, 18, 18);
+    background-color: #090909;
+    color: whitesmoke;
+
+    /* Disabled text selection */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .App {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5fr 1.5fr;
+    grid-template-areas: "sidebar topbar"
+                         "sidebar hero"
+                         "player player";
+
+    font-family: "Inter", sans-serif;
 }
+
+/* Sidebar CSS */
+.sidebar {
+    grid-area: sidebar;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+
+    background-color: black;
+    border-right: 3px solid rgba(170, 170, 170, 0.15);
+}
+
+.site-logo {
+    align-self: center;
+    padding-left: 1rem;
+}
+
+.navigation-bar {
+    list-style: none;
+    height: 40%;
+    padding-left: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    color: grey;
+}
+
+.navbar-icon {
+    font-size: 1.3rem;
+    width: 30px;
+}
+
+.navigation-bar li {
+    display: flex;
+    gap: 5px;
+}
+.navigation-bar li a {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+
+/* Topbar CSS */
+.topbar {
+    grid-area: topbar;
+}
+
+/* Hero CSS */
+.hero {
+    grid-area: hero;
+}
+
+/* Player CSS */
 .player {
-    width: 40%;
-    height: 150px;
+    width: 100%;
+    grid-area: player;
 
     display: flex;
     flex-direction: column;
@@ -26,7 +94,7 @@ body {
     align-items: center;
 
     background-color: black;
-    border-radius: 10px;
+    border-top: 3px solid rgba(170, 170, 170, 0.15);
 }
 
 .songDetails {
@@ -46,7 +114,7 @@ body {
 
 .navigation_wrapper {
     height: 5px;
-    width: 80%;
+    width: 50%;
     background-color: grey;
     border-radius: 5px;
     cursor: pointer;

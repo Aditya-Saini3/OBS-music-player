@@ -1,5 +1,8 @@
 import { useState, useRef, useEffect } from "react"
 import Player from "./components/Player";
+import Sidebar from "./components/Sidebar";
+import Topbar from "./components/Topbar";
+import Hero from "./components/VariableComp/Hero";
 import sidhuSongs from "./data.json";
 
 function App() {
@@ -7,27 +10,12 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(sidhuSongs[1]);
 
-  const audioElem = useRef()
-
-  useEffect(() => {
-    if(isPlaying) {
-      audioElem.current.play()
-    }
-    else {
-      audioElem.current.pause()
-    }
-  }, [isPlaying])
-
-  const onPlaying = () => {
-    
-    const duration = audioElem.current.duration;
-    const ct = audioElem.current.currentTime;
-    setCurrentSong({...currentSong, "progress": ct / duration * 100, "length": duration })
-  }
   
   return (
     <div className="App">
-      <audio src={currentSong.src} ref={audioElem} onTimeUpdate={onPlaying}></audio>
+      <Sidebar />
+      <Topbar />
+      <Hero />
       <Player
           currentSong={currentSong} 
           setCurrentSong={setCurrentSong}
@@ -35,7 +23,6 @@ function App() {
           setSongs={setSongs}
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
-          audioElem={audioElem}
       />
     </div>
   )

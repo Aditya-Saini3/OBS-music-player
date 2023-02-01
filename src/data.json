@@ -13,6 +13,36 @@
         "songName": "Challa (Cover) -",
         "singer": "Sidhu Moosewala",
         "src": "/music/Challa.mp3"
+    },
+    {
+        "songName": "47 -",
+        "singer": "Sidhu Moosewala",
+        "src": "/music/47.mp3"
+    },
+    {
+        "songName": "Criminal -",
+        "singer": "Sidhu Moosewala",
+        "src": "/music/Criminal.mp3"
+    },
+    {
+        "songName": "Dhakka -",
+        "singer": "Sidhu Moosewala",
+        "src": "/music/Dhakka.mp3"
+    },
+    {
+        "songName": "Forget About It -",
+        "singer": "Sidhu Moosewala",
+        "src": "/music/Forget-about-it.mp3"
+    },
+    {
+        "songName": "Jatta -",
+        "singer": "Sidhu Moosewala",
+        "src": "/music/Jatta.mp3"
+    },
+    {
+        "songName": "Bad -",
+        "singer": "Sidhu Moosewala",
+        "src": "/music/Bad.mp3"
     }
 ]
 
